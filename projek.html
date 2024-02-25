@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hacking in progress...</title>
+<style>
+body {
+  background-image: url('background.png'); /* Ubah URL dengan gambar latar belakang yang Anda inginkan */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  color: lime;
+  text-align: center;
+  font-family: monospace;
+  transition: opacity 1s ease-in-out;
+  opacity: 1;
+  margin: 0;
+  padding: 0;
+}
+
+.loading {
+  font-size: 16px;
+  margin-top: 20px;
+}
+
+.progress-box {
+  background-color: black;
+  border: 1px solid lime;
+  padding: 5px;
+  margin: 5px;
+  display: inline-block;
+}
+
+@keyframes blink {
+  0% { opacity: 0; }
+  50% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+.cursor {
+  display: inline-block;
+  animation: blink 1s infinite;
+}
+
+.loading-bar {
+  Border: 1px solid lime;
+  width: 100%;
+  height: 5px;
+  background-color: black;
+  margin-top: 5px;
+  overflow: hidden;
+}
+
+.loading-progress {
+  width: 0;
+  height: 100%;
+  background-color: lime;
+  animation: progress 2s infinite;
+}
+
+@keyframes progress {
+  0% { width: 0; }
+  50% { width: 50%; }
+  100% { width: 100%; }
+}
+
+@media only screen and (max-width: 600px) {
+  h1 {
+    font-size: 24px;
+  }
+}
+
+input[type="text"] {
+  padding: 8px;
+  margin: 5px;
+  border: 1px solid lime;
+  border-radius: 4px;
+  background-color: black;
+  color: lime;
+}
+
+button {
+  padding: 10px 20px;
+  margin: 10px;
+  border: none;
+  border-radius: 4px;
+  background-color: lime;
+  color: black;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: limegreen;
+}
+</style>
+</head>
+<body>
+<img src="pap1.png" alt="Placeholder Image" style="width: 300px; height: auto; margin-top: 5px;">
+<h1 style="margin-top: 0.5px;">Roboslot sedang memproses...</h1>
+<div class="loading">
+  <div class="progress-box">
+    <p>Auto Scatter maxwin: <span id="mainframe">0%</span> <span class="cursor">_</span></p>
+    <div class="loading-bar">
+      <div class="loading-progress"></div>
+    </div>
+  </div>
+  <div class="progress-box">
+    <p>Auto Sensational 500×/1000×: <span id="security">0%</span> <span class="cursor">_</span></p>
+    <div class="loading-bar">
+      <div class="loading-progress"></div>
+    </div>
+  </div>
+  <div class="progress-box">
+    <p>Auto Pola gacor maxwin: <span id="files">0%</span> <span class="cursor">_</span></p>
+    <div class="loading-bar">
+      <div class="loading-progress"></div>
+    </div>
+  </div>
+  <div class="progress-box">
+    <p>Auto Server luar(Thailand): <span id="firewall">0%</span> <span class="cursor">_</span></p>
+    <div class="loading-bar">
+      <div class="loading-progress"></div>
+    </div>
+  </div>
+  <p id="completed" style="display:none;">Proses selesai!</p>
+</div>
+<div>
+  <input type="text" id="inputText" placeholder="Masukkan username di sini...">
+  <button id="submitButton">Kirim</button>
+</div>
+
+<script>
+function progress() {
+  var mainframeProgress = 0;
+  var securityProgress = 0;
+  var filesProgress = 0;
+  var firewallProgress = 0;
+
+  var mainframeElement = document.getElementById("mainframe");
+  var securityElement = document.getElementById("security");
+  var filesElement = document.getElementById("files");
+  var firewallElement = document.getElementById("firewall");
+  var completedElement = document.getElementById("completed");
+
+  var mainframeLoadingBar = document.querySelectorAll('.progress-box')[0].querySelector('.loading-progress');
+  var securityLoadingBar = document.querySelectorAll('.progress-box')[1].querySelector('.loading-progress');
+  var filesLoadingBar = document.querySelectorAll('.progress-box')[2].querySelector('.loading-progress');
+  var firewallLoadingBar = document.querySelectorAll('.progress-box')[3].querySelector('.loading-progress');
+
+  var interval = setInterval(function() {
+    if (mainframeProgress < 100) {
+      mainframeProgress += Math.floor(Math.random() * 10) + 1;
+      mainframeElement.textContent = mainframeProgress + "%";
+      mainframeLoadingBar.style.width = mainframeProgress + "%";
+    }
+
+    if (securityProgress < 100) {
+      securityProgress += Math.floor(Math.random() * 10) + 1;
+      securityElement.textContent = securityProgress + "%";
+      securityLoadingBar.style.width = securityProgress + "%";
+    }
+
+    if (filesProgress < 100) {
+      filesProgress += Math.floor(Math.random() * 10) + 1;
+      filesElement.textContent = filesProgress + "%";
+      filesLoadingBar.style.width = filesProgress + "%";
+    }
+
+    if (firewallProgress < 100) {
+      firewallProgress += Math.floor(Math.random() * 10) + 1;
+      firewallElement.textContent = firewallProgress + "%";
+      firewallLoadingBar.style.width = firewallProgress + "%";
+    }
+
+    if (mainframeProgress >= 100 && securityProgress >= 100 && filesProgress >= 100 && firewallProgress >= 100) {
+      clearInterval(interval);
+      completedElement.style.display = "block";
+      setTimeout(function() {
+        document.body.style.opacity = 0;
+        setTimeout(function() {
+          window.location.href = "https://mainpgas88.com/?Ref=zVcXHtbm";
+        }, 1000);
+      }, 200);
+    }
+  }, 500);
+}
+
+document.getElementById("submitButton").addEventListener("click", function() {
+  var inputText = document.getElementById("inputText").value;
+  if (inputText.trim() !== "") {
+    progress();
+  } else {
+    alert("Masukkan teks sebelum mengirim.");
+  }
+});
+</script>
+</body>
+</html>
